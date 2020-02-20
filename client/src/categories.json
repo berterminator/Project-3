@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Box",
+    "image": "https://github.com/sahernandezr/clicky-game/blob/master/public/images/box.png?raw=true",
+    "clicked": false
+  },
+  {
+    "id": 2,
+    "name": "Bullet",
+    "image": "https://github.com/sahernandezr/clicky-game/blob/master/public/images/bullet.png?raw=true",
+    "clicked": false
+  }
+]
