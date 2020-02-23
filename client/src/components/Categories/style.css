@@ -1,0 +1,40 @@
+/* .categoryPic {
+    width: 32%;
+}
+
+.categoryCard {
+    width: 32%; 
+} */
+
+.flex-grid {
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.col {
+    /* flex: 3; */
+    flex-basis: 33%;
+    --ms--flex: auto;
+    width: 30%;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    clear: both;
+}
+
+.container {
+    max-width: 1335px;
+    margin: 0 auto;
+}
+
+/* .flex-grid-thirds {
+    /* width: 1024px; */
+    /* display: flex;
+    justify-content: space-between;
+  }
+
+div .flex-grid-thirds .col{
+    width: 32%;
+} */

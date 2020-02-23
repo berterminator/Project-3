@@ -1,0 +1,26 @@
+.nav {
+    color: #000000;
+    /* background-color: #43B047; */
+    height: 50px;
+    font-size: 2rem;
+}
+
+a {
+    color: #000000;
+}
+
+.navbar-brand {
+    border: 0;
+    padding: auto;
+    margin: auto 10;
+    /* font-family: 'Bangers', cursive; */
+    font-size: 2rem;
+}
+
+.nav-item {
+    /* font-family: 'Montserrat', sans-serif; */
+    /* border: 0;
+    padding: 5 0; */
+    margin: auto 15px auto auto;
+    float: right;
+}
