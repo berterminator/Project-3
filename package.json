@@ -1,0 +1,29 @@
+{
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "This repository contains out Coding Bootcamp Third Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humberto24/Project-3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/humberto24/Project-3/issues"
+  },
+  "homepage": "https://github.com/humberto24/Project-3#readme",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "router": "^1.3.4",
+    "sequelize": "^5.21.5",
+    "sequelize-cli": "^5.5.1"
+  }
+}
