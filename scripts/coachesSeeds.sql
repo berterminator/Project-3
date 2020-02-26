@@ -1,6 +1,3 @@
-INSERT INTO coaches (name)
-VALUES ("UMass");
-
 INSERT INTO coaches (id, firstname, lastname, picture, category, email, password, location, fee, languages, linkedin, twitter, website, personalstatement, education, opendays, ratings, testimonials)
 VALUES (1, "Catrina", "Collom", "https://github.com/humberto24/Project-3/blob/sandra/client/public/images/coaches/1.jpg?raw=true", "Business", "catrina.collom@gmail.com", "rV&TKF", "NY", 80, "Spanish", "https://www.linkedin.com/", "https://twitter.com/", "https://www.google.com/", "At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.", "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. ", "Monday, Friday", 5, "Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric outside the box thinking. Completely pursue scalable customer service through sustainable potentialities.");
 
