@@ -17,6 +17,12 @@ module.exports = function(sequelize, DataTypes) {
       opendays: DataTypes.STRING,
       ratings:DataTypes.INTEGER,
       testimonials: DataTypes.TEXT,
+      createdAt: {
+        type: DataTypes.DATE
+    },
+    updatedAt: {
+        type: DataTypes.DATE
+    }
     });
     return Coaches;
   };

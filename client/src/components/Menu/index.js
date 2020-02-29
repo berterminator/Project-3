@@ -5,13 +5,13 @@ function Menu(props) {
     return (
         <ul className="nav justify-content-center">
             <li className="nav-item">Why coaching?
-                <a class="nav-link active" href="#"></a>
+                <a className="nav-link active" href="#"></a>
             </li>
             <li className="nav-item">How does it work?
-                <a class="nav-link active" href="#"></a>
+                <a className="nav-link active" href="#"></a>
             </li>
             <li className="nav-item">I am a coach
-                <a class="nav-link active" href="#"></a>
+                <a className="nav-link active" href="#"></a>
             </li>
         </ul>
     )

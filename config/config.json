@@ -1,8 +1,8 @@
 {
     "development": {
       "username": "root",
-      "password": null,
-      "database": "store",
+      "password": "LeicaMySQL911*",
+      "database": "coachingdb",
       "host": "localhost",
       "dialect": "mysql"
     },
