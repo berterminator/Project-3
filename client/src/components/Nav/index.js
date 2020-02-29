@@ -36,7 +36,7 @@ function Nav(props) {
                 <div className="navButton" id="registerbutton">
                 <li className="dropdown">
                     <button type="button" id="dropdownMenu1 myDIV2" data-toggle="dropdown"
-                        className="btn btn-warning btn-lg add-to-cart dropdown-toggle">Login <span className="caret"></span></button>
+                        className="btn btn-warning btn-lg add-to-cart dropdown-toggle">Register <span className="caret"></span></button>
                     <ul className="dropdown-menu dropdown-menu-right mt-2">
                         <li className="px-3 py-2">
                             <form className="form" role="form">

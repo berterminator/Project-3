@@ -3,31 +3,11 @@ var app = require('express').Router();
 var connection = require('mysql');
 
 
-
-
-  const SELECT_ALL_COACHES_QUERY = "SELECT * FROM coaches";
-
   app.get("/", (req, res) => {
     res.send('Working')
   })
 
-  // app.get("/coaches", (req, res) => {
-
-  //   return connection.query(SELECT_ALL_COACHES_QUERY, (err, results) => {
-  //     if (err) {
-  //       console.log(err);
-  //       return res.send(err);
-  //     }
-  //     else {
-  //       console.log(results);
-  //       return res.status(200).json(
-  //          results
-  //       );
-          
-  //     }
-  //   })
-  // });
-
+  //GET ALL COACHES
   app.get("/api/coaches", function(req, res) {
     
     db.coaches.findAll({}).then(function(dbCoaches) {
@@ -38,24 +18,30 @@ var connection = require('mysql');
   });
 
 
+  //GET ALL COACHES OF ONE GIVEN CATEGORY
+  app.get("/api/coaches/:category", function(req, res) {
+    
+    db.coaches.findAll({
+      where: {category: req.params.category}
+    }).then(function(dbCoaches) {
+      console.log(dbCoaches);
+      return res.json(dbCoaches);
+      
+    });
+  });
 
-  // const SELECT_COACHES_BY_CATEGORY = "Select * FROM coaches where ?"
+  //GET ONE COACH BY ID
+  app.get("/api/coaches/id/:id", function(req, res) {
+    
+    db.coaches.findAll({
+      where: {id: req.params.id}
+    }).then(function(dbCoaches) {
+      console.log(dbCoaches);
+      return res.json(dbCoaches);
+      
+    });
+  });
 
-  // app.get("/coaches/:category", function(req, res) {
-  //   connection.query(SELECT_COACHES_BY_CATEGORY, {category=req.params.category}, (err, results) => {
-  //     if (err) {
-  //       return res.send(err);
-  //     }
-  //     else {
-  //       return res.json({
-  //         data: results
-  //       });
-  //     }
-  //   })
-  // });
-
-  
-  
 
   // app.get("/api/email/:email", function(req, res) {
   //   db.Coaches
