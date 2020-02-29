@@ -27,7 +27,7 @@ var connection = require('mysql');
   //   })
   // });
 
-  app.get("/api/coaches", function(req, res) {
+  app.get("/all", function(req, res) {
     
     db.coaches.findAll({}).then(function(dbCoaches) {
       console.log(dbCoaches);
@@ -41,7 +41,7 @@ var connection = require('mysql');
 
 
 // THIS CODE ADDS A NEW COACH TO THE DATABASE
-app.post('/api/coaches/register', async (req, res) => {
+app.post('/register', async (req, res) => {
 
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt); 

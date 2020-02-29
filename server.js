@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 const db = require("./models");
-const routes = require("./routes/coachesApiRoutes");
+const coachRoutes = require("./routes/coachesApiRoutes");
+const userRoutes = require("./routes/usersApiRoutes")
 const cors = require("cors");
 const PORT = process.env.PORT || 3001;
 
@@ -19,8 +20,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build")); 
 }
 
+
 // Add routes, both API and view
-app.use("/", routes);
+app.use("/api/coaches", coachRoutes);
+app.use("/api/users", userRoutes);
 
 db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
