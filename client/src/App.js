@@ -1,46 +1,42 @@
-import React, { Component } from 'react';
+import React , { Component} from 'react';
 //import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Wrapper from "./components/Wrapper";
-import Categories from "./components/Categories";
-import categories from "./categories.json";
+//import Categories from "./components/Categories";
+//import categories from "./categories.json";
+import Home from './pages/Home';
+import Category from './pages/Category';
+import Coach from './pages/Coach';
 
 class App extends Component {
   state = {
     logged: false,
-    categories,
     logginmessage: "Login | Register"
   };
 
-  
+
   render() {
     return (
-      <div className="wholeSite">
-        <Nav loginmessage={this.state.loginmessage}></Nav>
-        <Header></Header>
-        
+      <Router>
         <Wrapper>
-        <Menu></Menu>
-        <div className="container">
-        <div className="flex-grid">
-          
-          {
-            this.state.categories.map((categories, i) =>
-              <Categories 
-              id={categories.id} 
-              key={categories.id}
-              name={categories.category} 
-              image={categories.image}
-              description={categories.description} 
-              url={categories.url}  />
-            )
-          }
-          </div>
+          <div>
+            <Header />
+            <Menu/>
+            <Nav loginmessage={this.state.loginmessage} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              {/* <Route exact path="/coaches" component={Category} /> */}
+              {/* <Route exact path="/coaches/:category" component={Category} /> */}
+              {/* <Route exact path="/coaches/register" component={Registercoach} /> */}
+              {/* <Route exact path="/users/register" component={Registeruser} /> */}
+
+            </Switch>
           </div>
         </Wrapper>
-      </div>
+      </Router>
     );
   };
 }
