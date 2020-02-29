@@ -4,65 +4,48 @@ var connection = require('mysql');
 
 
 
-  const SELECT_ALL_COACHES_QUERY = "SELECT * FROM coaches";
+  const SELECT_ALL_COACHES_QUERY = "SELECT * FROM users";
 
   app.get("/", (req, res) => {
     res.send('Working')
   })
 
-  // app.get("/coaches", (req, res) => {
 
-  //   return connection.query(SELECT_ALL_COACHES_QUERY, (err, results) => {
-  //     if (err) {
-  //       console.log(err);
-  //       return res.send(err);
-  //     }
-  //     else {
-  //       console.log(results);
-  //       return res.status(200).json(
-  //          results
-  //       );
-          
-  //     }
-  //   })
-  // });
-
-  app.get("/api/coaches", function(req, res) {
+//   THIS CODE GETS ALL THE USERS
+  app.get("/api/users", function(req, res) {
     
-    db.coaches.findAll({}).then(function(dbCoaches) {
-      console.log(dbCoaches);
-      return res.json(dbCoaches);
+    db.users.findAll({}).then(function(dbUsers) {
+      console.log(dbUsers);
+      return res.json(dbUsers);
       
     });
   });
 
 
 
-
-
-// THIS CODE ADDS A NEW COACH TO THE DATABASE
-app.post('/api/coaches/register', async (req, res) => {
+// THIS CODE ADDS A NEW USER TO THE DATABASE
+app.post('/api/users/register', async (req, res) => {
 
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt); 
     console.log(salt);
     console.log(hashedPassword);
 
-    let sql = "INSERT INTO coaches SET ?";
+    let sql = "INSERT INTO users SET ?";
     let post = {
       // this must be updated
         email: req.body.email,
-        secretCode: hashedPassword
+        password: hashedPassword
     }
 
     connection.query(sql, post, (err, result) => {
     if(err){
-        res.send("There was an error registering the new coach");
-        console.log("There was an error registering the new coach:" + err);
+        res.send("There was an error registering the new user");
+        console.log("There was an error registering the new user:" + err);
 
     }else{
-        res.send("The coach was registered succesfully");
-        console.log("The coach was registered succesfully");
+        res.send("The user was registered succesfully");
+        console.log("The user was registered succesfully");
 
     };
   });
@@ -75,7 +58,7 @@ app.post('/api/coaches/register', async (req, res) => {
 // THIS CODE LOGS IN A COACH
 app.post('/users/login', (req, res) => {
     
-  let sql = "SELECT email, password FROM coach WHERE ?";
+  let sql = "SELECT email, password FROM users WHERE ?";
   let theUser = req.body.email;   
   let theSecretCode = req.body.password 
 
