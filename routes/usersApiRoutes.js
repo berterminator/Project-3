@@ -3,18 +3,15 @@ var app = require('express').Router();
 var connection = require('mysql');
 
 
-
-  const SELECT_ALL_COACHES_QUERY = "SELECT * FROM users";
-
   app.get("/", (req, res) => {
     res.send('Working')
-  })
+  });
 
 
 //   THIS CODE GETS ALL THE USERS
-  app.get("/api/users", function(req, res) {
+  app.get("/all", function(req, res) {
     
-    db.users.findAll({}).then(function(dbUsers) {
+   return db.users.findAll({}).then(function(dbUsers) {
       console.log(dbUsers);
       return res.json(dbUsers);
       
@@ -22,9 +19,8 @@ var connection = require('mysql');
   });
 
 
-
 // THIS CODE ADDS A NEW USER TO THE DATABASE
-app.post('/api/users/register', async (req, res) => {
+app.post('/register', async (req, res) => {
 
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt); 
@@ -50,9 +46,6 @@ app.post('/api/users/register', async (req, res) => {
     };
   });
 });
-
-
-
 
 
 // THIS CODE LOGS IN A COACH
@@ -89,71 +82,5 @@ app.post('/users/login', (req, res) => {
   console.log(q.sql);
 
 });
-
-
-
-
-
-  // const SELECT_COACHES_BY_CATEGORY = "Select * FROM coaches where ?"
-
-  // app.get("/coaches/:category", function(req, res) {
-  //   connection.query(SELECT_COACHES_BY_CATEGORY, {category=req.params.category}, (err, results) => {
-  //     if (err) {
-  //       return res.send(err);
-  //     }
-  //     else {
-  //       return res.json({
-  //         data: results
-  //       });
-  //     }
-  //   })
-  // });
-
-  
-
-  // app.get("/api/email/:email", function(req, res) {
-  //   db.Coaches
-  //     .findAll({
-  //       where: {
-  //         email: req.params.email
-  //       }
-  //     })
-  //     .then(function(results) {
-  //       res.json(results);
-  //     });
-  // });
-
-  // Create a new coach
-  // app.post("/api/coaches", function(req, res) {
-  //   db.Coaches.create(req.body).then(function(dbCoaches) {
-  //     res.json(dbCoaches);
-  //   });
-  // });
-
-  // Delete a coach by id
-  // app.delete("/api/coaches/:id", function(req, res) {
-  //   db.Coaches
-  //     .destroy({ where: { id: req.params.id } })
-  //     .then(function(dbCoaches) {
-  //       res.json(dbCoaches);
-  //     });
-  // });
-
-  // Update a coach by id
-  // app.put("/api/coaches", function(req, res) {
-  //   db.Coaches
-  //     .update(req.body, {
-  //       where: {
-  //         id: req.body.id
-  //       }
-  //     })
-  //     .then(function(dbCoaches) {
-  //       res.json(dbCoaches);
-  //     });
-  // });
-
-
-
-
 
   module.exports = app;
