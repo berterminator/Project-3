@@ -24,3 +24,7 @@ a {
     margin: auto 15px auto auto;
     float: right;
 }
+
+.navButton {
+    padding: 0px 0px 0px 10px;
+}
