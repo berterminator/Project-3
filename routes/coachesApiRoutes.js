@@ -2,7 +2,6 @@ var db = require("../models");
 var app = require('express').Router();
 var connection = require('mysql');
 
-
   app.get("/", (req, res) => {
     res.send('Working')
   })
@@ -23,18 +22,6 @@ var connection = require('mysql');
     
     db.coaches.findAll({
       where: {category: req.params.category}
-    }).then(function(dbCoaches) {
-      console.log(dbCoaches);
-      return res.json(dbCoaches);
-      
-    });
-  });
-
-  //GET ONE COACH BY ID
-  app.get("/api/coaches/id/:id", function(req, res) {
-    
-    db.coaches.findAll({
-      where: {id: req.params.id}
     }).then(function(dbCoaches) {
       console.log(dbCoaches);
       return res.json(dbCoaches);
@@ -83,5 +70,9 @@ var connection = require('mysql');
   //       res.json(dbCoaches);
   //     });
   // });
+
+
+
+
 
   module.exports = app;
