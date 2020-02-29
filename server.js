@@ -31,26 +31,3 @@ db.sequelize.sync().then(function () {
         console.log("Server listening on: http://localhost:" + PORT);
     });  
 });
-
-
-
-// const mysql = require("mysql2");
-
-
-
-// //connect to mySQL database
-// const connection = mysql.createConnection({
-//     host: "localhost",
-//     port: 3306,
-//     user: "root",
-//     password: "LeicaMySQL911*",
-//     database: "coachingDB"
-// });
-
-// connection.connect(function (err) {
-//     console.log("connected as id " + connection.threadId);
-//     if (err) {
-//         console.error("error connecting: " + err.stack);
-//         return;
-//     }
-// });

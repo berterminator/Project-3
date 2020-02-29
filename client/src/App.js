@@ -8,8 +8,9 @@ import Wrapper from "./components/Wrapper";
 //import Categories from "./components/Categories";
 //import categories from "./categories.json";
 import Home from './pages/Home';
-import Category from './pages/Category';
+import Allcoaches from './pages/Allcoaches';
 import Coach from './pages/Coach';
+
 
 class App extends Component {
   state = {
@@ -28,7 +29,7 @@ class App extends Component {
             <Nav loginmessage={this.state.loginmessage} />
             <Switch>
               <Route exact path="/" component={Home} />
-              {/* <Route exact path="/coaches" component={Category} /> */}
+              <Route exact path="/coaches" component={Allcoaches} />
               {/* <Route exact path="/coaches/:category" component={Category} /> */}
               {/* <Route exact path="/coaches/register" component={Registercoach} /> */}
               {/* <Route exact path="/users/register" component={Registeruser} /> */}
