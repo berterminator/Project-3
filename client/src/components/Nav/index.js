@@ -51,7 +51,7 @@ function Nav(props) {
                                         required="" />
                                 </div>
                                 <div className="form-group">
-                                    <button onSubmit={} type="submit" className="btn btn-primary btn-block">Register</button>
+                                    <button type="submit" className="btn btn-primary btn-block">Register</button>
                                 </div>
                             </form>
                         </li>

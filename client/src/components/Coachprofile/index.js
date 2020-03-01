@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Coachcard(props) {
+function Coachprofile(props) {
     return (
         <div className="card mb-3">
             <div className="row no-gutters">
@@ -14,9 +14,10 @@ function Coachcard(props) {
                     <div className="card-body">
                         <h3 className="card-header">{`${props.firstname}  ${props.lastname}`}</h3>
                         <h4 className="card-title">{props.category} coach</h4>
-                        <p className="card-text">{props.personalstatement}</p>
-                        <p><i className="fas fa-graduation-cap"></i>  {props.education}</p>
-                        <p className="card-text">   
+                        <p className="card-text">Personal Statement: <br />{props.personalstatement}</p>
+                        <p><i className="fas fa-graduation-cap"></i> Education: {props.education}</p>
+                        <p className="card-text">
+                            <a href=""><i className="fab fa-linkedin"></i></a> | <a href=""><i className="fab fa-twitter-square"></i></a> | <a href=""><i className="fas fa-globe"></i></a>   
                         <a href="" className="btn btn-primary details">  <i className="fas fa-user"></i> Details</a>
                         </p>
                     </div>
@@ -27,4 +28,4 @@ function Coachcard(props) {
 
 };
 
-export default Coachcard;
+export default Coachprofile;

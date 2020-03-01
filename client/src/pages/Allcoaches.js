@@ -40,12 +40,15 @@ class Allcoaches extends Component {
         <Wrapper>
 
           <div className="container">
-            <h1>All the coaches!</h1>
+            
             {this.state.coaches.map(coach => <Coachcard
             id= {coach.id}
             picture={coach.picture}
             firstname = {coach.firstname}
             lastname = {coach.lastname}
+            category = {coach.category}
+            personalstatement = {coach.personalstatement}
+            education = {coach.education}
             
             />)}
           </div>
