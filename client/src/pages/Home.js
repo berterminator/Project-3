@@ -30,7 +30,7 @@ class Home extends Component {
               <Categories 
               id={categories.id} 
               key={categories.id}
-              name={categories.category} 
+              category={categories.category} 
               image={categories.image}
               description={categories.description} 
               url={categories.url}  />

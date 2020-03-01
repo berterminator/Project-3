@@ -1,13 +1,12 @@
 var db = require("../models");
 var app = require('express').Router();
-var connection = require('mysql');
 
   app.get("/", (req, res) => {
     res.send('Working')
   })
 
   //GET ALL COACHES
-  app.get("/api/coaches", function(req, res) {
+  app.get("/all", function(req, res) {
     
     db.coaches.findAll({}).then(function(dbCoaches) {
       console.log(dbCoaches);

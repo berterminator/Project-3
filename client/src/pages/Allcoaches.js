@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import './App.css';
 import { Link } from "react-router-dom";
-//import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import Nav from "./components/Nav";
 //import Header from "./components/Header";
 //import Menu from "./components/Menu";

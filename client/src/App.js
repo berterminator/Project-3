@@ -10,6 +10,7 @@ import Wrapper from "./components/Wrapper";
 import Home from './pages/Home';
 import Allcoaches from './pages/Allcoaches';
 import Coach from './pages/Coach';
+import Coachesbycategory from './pages/Category';
 
 
 class App extends Component {
@@ -32,7 +33,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/coaches" component={Allcoaches} />
-              {/* <Route exact path="/coaches/:category" component={Category} /> */}
+              <Route exact path="/coaches/:category" component={Coachesbycategory} />
               {/* <Route exact path="/coaches/register" component={Registercoach} /> */}
               {/* <Route exact path="/users/register" component={Registeruser} /> */}
 
