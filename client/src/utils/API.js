@@ -11,7 +11,7 @@ export default {
   },
   // Gets one coach given the id
   getCoach: function(id) {
-    return axios.get("/api/coach/" + id);
+    return axios.get("/api/coaches/id/" + id);
 //   },
 //   // Saves a new coach to the database
 //   saveCoach: function(coachData) {

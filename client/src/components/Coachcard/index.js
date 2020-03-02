@@ -17,7 +17,7 @@ function Coachcard(props) {
                         <p className="card-text">{props.personalstatement}</p>
                         <p><i className="fas fa-graduation-cap"></i>  {props.education}</p>
                         <p className="card-text">   
-                        <a href={`/coach/${props.id}`} className="btn btn-primary details">  <i className="fas fa-user"></i> Details</a>
+                        <a href={`/coaches/id/${props.id}`} className="btn btn-primary details">  <i className="fas fa-user"></i> Details</a>
                         </p>
                     </div>
                 </div>
