@@ -34,6 +34,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/coaches" component={Allcoaches} />
               <Route exact path="/coaches/:category" component={Coachesbycategory} />
+              <Route exact path="/coach/:id" component={Coach} />
               {/* <Route exact path="/coaches/register" component={Registercoach} /> */}
               {/* <Route exact path="/users/register" component={Registeruser} /> */}
 

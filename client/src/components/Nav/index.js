@@ -4,7 +4,7 @@ import "./style.css";
 function Nav(props) {
     return (
         <ul className="nav">
-            <li className="navbar-brand" href="/">Get Boost!
+            <li className="navbar-brand"><a href="/">Get Boost!</a>
             </li>
 
                 {/* LOGIN BUTTION */}

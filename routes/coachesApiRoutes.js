@@ -28,6 +28,18 @@ var app = require('express').Router();
     });
   });
 
+  //GET ONE COACH BY ID
+  app.get("/api/coach/:id", function(req, res) {
+    
+    db.coaches.findAll({
+      where: {id: req.params.id}
+    }).then(function(dbCoaches) {
+      console.log(dbCoaches);
+      return res.json(dbCoaches);
+      
+    });
+  });
+
 
   // app.get("/api/email/:email", function(req, res) {
   //   db.Coaches

@@ -7,25 +7,27 @@ import { Link } from "react-router-dom";
 //import Menu from "./components/Menu";
 import Wrapper from "../components/Wrapper";
 import Coachcard from "../components/Coachcard";
+import Coachprofile from "../components/Coachprofile";
 import API from "../utils/API";
 
 class Allcoaches extends Component {
 
   state = {
-    coaches: [],
+    coach: [],
     firstname: "",
     lastname: ""
   };
 
   componentDidMount() {
+    console.log("YOUR PROPS IS "  + this.props.match.params.id);
     this.loadAllCoaches();
   }
 
   loadAllCoaches = () => {
-    API.getAllCoaches()
+    API.getCoach(this.props.match.params.id)
       .then(res => {
-        console.log(res);
-        this.setState({ coaches: res.data, firstname: "", lastname: "" });
+        //console.log(res);
+        this.setState({ coach: res.data, firstname: "", lastname: "" });
       }
       )
       .catch(err => console.log(err));
@@ -41,7 +43,7 @@ class Allcoaches extends Component {
 
           <div className="container">
             
-            {this.state.coaches.map(coach => <Coachcard
+            {this.state.coach.map(coach => <Coachprofile
             id= {coach.id}
             picture={coach.picture}
             firstname = {coach.firstname}
