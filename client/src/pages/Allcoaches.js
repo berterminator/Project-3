@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import './App.css';
 import { Link } from "react-router-dom";
-//import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import Nav from "./components/Nav";
 //import Header from "./components/Header";
 //import Menu from "./components/Menu";
@@ -40,12 +40,15 @@ class Allcoaches extends Component {
         <Wrapper>
 
           <div className="container">
-            <h1>All the coaches!</h1>
+            
             {this.state.coaches.map(coach => <Coachcard
             id= {coach.id}
             picture={coach.picture}
             firstname = {coach.firstname}
             lastname = {coach.lastname}
+            category = {coach.category}
+            personalstatement = {coach.personalstatement}
+            education = {coach.education}
             
             />)}
           </div>

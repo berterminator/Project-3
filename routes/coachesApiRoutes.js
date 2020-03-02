@@ -1,20 +1,20 @@
 var db = require("../models");
 var app = require('express').Router();
-var connection = require('mysql');
-
-app.get("/", (req, res) => {
-  res.send('Working')
-})
 
 
-app.get("/all", function (req, res) {
 
-  db.coaches.findAll({}).then(function (dbCoaches) {
-    console.log(dbCoaches);
-    return res.json(dbCoaches);
+  app.get("/", (req, res) => {
+    res.send('Working')
+  })
 
-  });
-});
+  //GET ALL COACHES
+  app.get("/all", function(req, res) {
+    
+    db.coaches.findAll({}).then(function(dbCoaches) {
+      console.log(dbCoaches);
+      return res.json(dbCoaches);
+      
+    });
 
 
 // THIS CODE ADDS A NEW COACH TO THE DATABASE

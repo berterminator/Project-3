@@ -6,13 +6,13 @@ import UserRegister from "../RegisterUser/index";
 
 function Nav(props) {
     return (
+      <div> 
         <ul className="nav">
-            <li className="navbar-brand" href="/">Get Boost!
-            </li>
-
-                <UserLogin></UserLogin>
-                <UserRegister></UserRegister>
-       </ul>
+              <li className="navbar-brand" href="/">Get Boost!</li>
+                  <UserLogin></UserLogin>
+                  <UserRegister></UserRegister>
+         </ul>
+      </div>
     )
 };
 

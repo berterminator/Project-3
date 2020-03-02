@@ -1,47 +1,65 @@
 import React, { Component } from 'react';
 //import './App.css';
 import { Link } from "react-router-dom";
-//import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import Nav from "./components/Nav";
 //import Header from "./components/Header";
 //import Menu from "./components/Menu";
 import Wrapper from "../components/Wrapper";
+import Coachcard from "../components/Coachcard";
+import API from "../utils/API";
+import axios from 'axios';
 
-class Category extends Component {
+
+class Coachesbycategory extends Component {
 
   state = {
-    coaches: [],
-    coach: {
-      firstname: "John",
-      lastname: "Doe"
-    }
+    category: "",
+    coaches: []
   };
 
   componentDidMount() {
-    this.getProducts();
+    console.log("YOUR PROPS IS "  + this.props.match.params.category);
+    this.loadAllCoaches();
+    
+    
   }
 
-  getProducts = () => {
-    fetch("/api/coaches")
-      .then(response => response.json())
-      .then(response => this.setState({ coaches: response.data }))
-      .catch(err => console.log(err))
+  loadAllCoaches = () => {
+    API.getCoachesByCategory(this.props.match.params.category)
+      .then(res => {
+        //console.log(res);
+        this.setState({ coaches: res.data, firstname: "", lastname: "" });
+      }
+      )
+      .catch(err => console.log(err));
   };
 
 
-  renderProduct = ({ id, firstname, lastname }) => <div key={id}>{firstname} {lastname} dollars</div>
-
   render() {
-    const { coaches } = this.state;
     return (
-      <div className="App">
-        {coaches.map(this.renderProduct)}
+      <div>
 
-        
 
+        <Wrapper>
+
+          <div className="container">
+            
+            {this.state.coaches.map(coach => <Coachcard
+            id= {coach.id}
+            picture={coach.picture}
+            firstname = {coach.firstname}
+            lastname = {coach.lastname}
+            category = {coach.category}
+            personalstatement = {coach.personalstatement}
+            education = {coach.education}
+            
+            />)}
+          </div>
+        </Wrapper>
       </div>
     );
-  }
+  };
 }
 
-export default Category;
+export default Coachesbycategory;

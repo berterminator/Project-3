@@ -6,20 +6,51 @@ import { Link } from "react-router-dom";
 //import Header from "./components/Header";
 //import Menu from "./components/Menu";
 import Wrapper from "../components/Wrapper";
+import Coachcard from "../components/Coachcard";
+import API from "../utils/API";
 
-class Coach extends Component {
-  
+class Allcoaches extends Component {
 
-  
+  state = {
+    coaches: [],
+    firstname: "",
+    lastname: ""
+  };
+
+  componentDidMount() {
+    this.loadAllCoaches();
+  }
+
+  loadAllCoaches = () => {
+    API.getAllCoaches()
+      .then(res => {
+        console.log(res);
+        this.setState({ coaches: res.data, firstname: "", lastname: "" });
+      }
+      )
+      .catch(err => console.log(err));
+  };
+
+
   render() {
     return (
       <div className="Home">
-        
-        
+
+
         <Wrapper>
-        
-        <div className="container">
-            <h1>Just one coach</h1>
+
+          <div className="container">
+            
+            {this.state.coaches.map(coach => <Coachcard
+            id= {coach.id}
+            picture={coach.picture}
+            firstname = {coach.firstname}
+            lastname = {coach.lastname}
+            category = {coach.category}
+            personalstatement = {coach.personalstatement}
+            education = {coach.education}
+            
+            />)}
           </div>
         </Wrapper>
       </div>
@@ -27,4 +58,4 @@ class Coach extends Component {
   };
 }
 
-export default Coach;
+export default Allcoaches;
