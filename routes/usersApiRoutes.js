@@ -48,7 +48,7 @@ app.post('/register', async (req, res) => {
 });
 
 
-// THIS CODE LOGS IN A COACH
+// THIS CODE LOGS IN A USER
 app.post('/users/login', (req, res) => {
     
   let sql = "SELECT email, password FROM users WHERE ?";

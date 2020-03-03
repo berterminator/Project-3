@@ -1,7 +1,16 @@
 import React from "react";
 import "./style.css";
+import api from "../../utils/api";
 
 function UserLogin(props) {
+    
+    handleSubmit(){
+        api.loginUser({
+            email: 
+            password:
+        })
+    };
+    
     return(
 
         <div className="navButton" id="loginbutton">
@@ -21,7 +30,7 @@ function UserLogin(props) {
                                     required="" />
                             </div>
                             <div className="form-group">
-                                <button type="submit" className="btn btn-primary btn-block">Login</button>
+                                <button onClick={handleSubmit} type="submit" className="btn btn-primary btn-block">Login</button>
                             </div>
                         </form>
                     </li>

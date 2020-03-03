@@ -9,7 +9,6 @@ function Nav(props) {
         <ul className="nav">
             <li className="navbar-brand" href="/">Get Boost!
             </li>
-
                 <UserLogin></UserLogin>
                 <UserRegister></UserRegister>
        </ul>
